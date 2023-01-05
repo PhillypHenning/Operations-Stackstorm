@@ -17,3 +17,4 @@ jobs:
         aws_default_region: us-east-1
         st2_auth_username: ${{ secrets.ST2_AUTH_USERNAME}}
         st2_auth_password: ${{ secrets.ST2_AUTH_PASSWORD}}
+
