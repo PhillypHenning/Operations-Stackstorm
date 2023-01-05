@@ -1,0 +1,19 @@
+name: Deploy ST2 Single VM with GHA
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - id: deploy
+      name: Deploy
+      uses: bitovi/github-actions-deploy-stackstorm@main
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+        aws_default_region: us-east-1
+        st2_auth_username: ${{ secrets.ST2_AUTH_USERNAME}}
+        st2_auth_password: ${{ secrets.ST2_AUTH_PASSWORD}}
