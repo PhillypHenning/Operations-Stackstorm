@@ -1,6 +1,8 @@
 name: Deploy ST2 Single VM with GHA
 
 on:
+  pull_request:
+    types: [opened, reopened]
   push:
     branches: [ main ]
   workflow_dispatch: {}
